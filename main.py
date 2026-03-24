@@ -135,7 +135,7 @@ def generate_log_message() -> str:
 
 async def send_logs_loop(chat_id: int, bot) -> None:
     while True:
-        delay = random.uniform(20 * 60, 30 * 60)
+        delay = random.uniform(10 * 60, 20 * 60)
         await asyncio.sleep(delay)
         try:
             msg = generate_log_message()
@@ -167,7 +167,7 @@ async def logs_command(update: Update, context: ContextTypes.DEFAULT_TYPE) -> No
 
     first_msg = generate_log_message()
     await update.message.reply_text(
-        "✅ Log stream activated. You will receive new logs every 30–60 minutes.\n\n"
+        "✅ Log stream activated. You will receive new logs every 10–20 minutes.\n\n"
         f"📡 Initial log:\n\n{first_msg}"
     )
 
