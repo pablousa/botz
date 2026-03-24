@@ -135,7 +135,7 @@ def generate_log_message() -> str:
 
 async def send_logs_loop(chat_id: int, bot) -> None:
     while True:
-        delay = random.uniform(30 * 60, 60 * 60)
+        delay = random.uniform(20 * 60, 30 * 60)
         await asyncio.sleep(delay)
         try:
             msg = generate_log_message()
